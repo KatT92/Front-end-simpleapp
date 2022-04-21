@@ -13,7 +13,7 @@ const Reminders = () => {
   useEffect(() => {
     async function fetchReminders() {
       const response = await fetch(
-        `https://simple-room26.herokuapp.com/users/${user_id}/reminders`
+        `${process.env.BACK_END_URL}/users/${user_id}/reminders`
       );
       const data = await response.json();
       //console.log(response.payload);

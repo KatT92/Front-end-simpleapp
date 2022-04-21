@@ -45,7 +45,7 @@ function AddItemForm() {
   async function fetchPostRem() {
     let reminder_id = Math.floor(1000 + Math.random() * 9000);
     let response = await fetch(
-      `https://simple-room26.herokuapp.com/users/${user_id}/reminders`,
+      `${process.env.BACK_END_URL}/users/${user_id}/reminders`,
       {
         method: "POST",
         headers: {
@@ -87,7 +87,7 @@ function AddItemForm() {
   async function fetchPostTodos() {
     let todo_id = Math.floor(1000 + Math.random() * 9000);
     let response = await fetch(
-      `https://simple-room26.herokuapp.com/users/${user_id}/todo`,
+      `${process.env.BACK_END_URL}/users/${user_id}/todo`,
       {
         method: "POST",
         headers: {

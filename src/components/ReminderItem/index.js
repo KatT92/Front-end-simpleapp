@@ -12,14 +12,14 @@ const ReminderItem = ({
     e.target.style.backgroundColor = "#A3F596";
     e.target.style.borderRadius = "20px";
     console.log(e.target.innerText);
-    
+
     function remove() {
       async function fetchPutTodos() {
         let uid = String(item.user_id);
         let rid = String(item.reminder_id);
 
         let response = await fetch(
-          `https://simple-room26.herokuapp.com/users/${uid}/reminders/${rid}`,
+          `${process.env.BACK_END_URL}/users/${uid}/reminders/${rid}`,
           {
             method: "PUT",
             headers: {
@@ -46,7 +46,7 @@ const ReminderItem = ({
       });
       setReminderData(newData);
     }
-    console.log(remove())
+    console.log(remove());
     setTimeout(() => remove(), 500);
   }
   return (

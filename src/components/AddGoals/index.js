@@ -14,7 +14,7 @@ export function AddGoals() {
     console.log(user_id);
     let goals_id = Math.floor(1000 + Math.random() * 9000);
     let response = await fetch(
-      `https://simple-room26.herokuapp.com/users/${user_id}/goals`,
+      `${process.env.BACK_END_URL}/users/${user_id}/goals`,
       {
         method: "POST",
         headers: {

@@ -13,7 +13,7 @@ const Goals = () => {
   useEffect(() => {
     async function fetchGetGoals() {
       let response = await fetch(
-        `https://simple-room26.herokuapp.com/users/${user_id}/goals`
+        `${process.env.BACK_END_URL}/users/${user_id}/goals`
       );
       let data = await response.json();
       console.log("get data", data);

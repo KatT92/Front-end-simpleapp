@@ -6,7 +6,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
   const { user } = useAuth0();
   const [user_id] = useState(Number(user.sub.substring(14, 18)));
   const [goals, setGoals] = useState([]);
-  console.log(goals)
+  console.log(goals);
 
   function remove() {
     setItems(
@@ -18,7 +18,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
 
   async function fetchPutTodos(bool) {
     let response = await fetch(
-      `https://simple-room26.herokuapp.com/users/${user_id}/todo/${todo_id}`,
+      `${process.env.BACK_END_URL}/users/${user_id}/todo/${todo_id}`,
       {
         method: "PUT",
         headers: {
@@ -64,7 +64,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
 
     async function fetchGetGoals() {
       let response = await fetch(
-        `https://simple-room26.herokuapp.com/users/${user_id}/goals`
+        `${process.env.BACK_END_URL}/users/${user_id}/goals`
       );
       let data = await response.json();
       console.log("get data", data);
@@ -83,7 +83,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
 
           async function fetchPutGoal() {
             let response = await fetch(
-              `https://simple-room26.herokuapp.com/users/${user_id}/goals/${goal.goals_id}`,
+              `${process.env.BACK_END_URL}/users/${user_id}/goals/${goal.goals_id}`,
               {
                 method: "PUT",
                 headers: {
@@ -111,7 +111,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
         ) {
           async function fetchPutGoal() {
             let response = await fetch(
-              `https://simple-room26.herokuapp.com/users/${user_id}/goals/${goal.goals_id}`,
+              `${process.env.BACK_END_URL}/users/${user_id}/goals/${goal.goals_id}`,
               {
                 method: "PUT",
                 headers: {
