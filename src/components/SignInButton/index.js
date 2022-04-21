@@ -5,7 +5,7 @@ import "./SignInButton.css";
 const SignInButton = () => {
   const { user, loginWithRedirect } = useAuth0();
   console.log("hi");
-  console.log(user);
+  console.log("user", user);
   return (
     <button className="sign-btn" onClick={() => loginWithRedirect()}>
       Sign in
