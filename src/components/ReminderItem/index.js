@@ -12,14 +12,13 @@ const ReminderItem = ({
     e.target.style.backgroundColor = "#A3F596";
     e.target.style.borderRadius = "20px";
     console.log(e.target.innerText);
-
     function remove() {
-      async function fetchPutTodos() {
+      async function fetchPutReminders() {
         let uid = String(item.user_id);
         let rid = String(item.reminder_id);
 
         let response = await fetch(
-          `${process.env.BACK_END_URL}/users/${uid}/reminders/${rid}`,
+          `https://simple-app-nd.herokuapp.com/users/${uid}/reminders/${rid}`,
           {
             method: "PUT",
             headers: {
@@ -40,18 +39,19 @@ const ReminderItem = ({
         let data = await response.json();
         console.log("put rdp", data.payload);
       }
-      fetchPutTodos();
+      fetchPutReminders();
+      console.log("rd", reminderData);
       let newData = reminderData.filter((item) => {
         return reminder_id !== item.reminder_id;
       });
       setReminderData(newData);
+      console.log("nd", newData, reminderData);
     }
-    console.log(remove());
     setTimeout(() => remove(), 500);
   }
   return (
-    <div className="item" onClick={handleClick}>
-      <h3>
+    <div className="item">
+      <h3 onClick={handleClick}>
         {name}, {time}, {String(due_date).substring(0, 10)}
       </h3>
     </div>

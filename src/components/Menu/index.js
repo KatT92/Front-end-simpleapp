@@ -1,9 +1,8 @@
 import React from "react";
 import "./Menu.css";
 
-import {Link} from "react-router-dom";
-import SignOutButton from '../SignOutButton';
-
+import { Link } from "react-router-dom";
+import SignOutButton from "../SignOutButton";
 
 const Menu = () => {
   function openNav() {
@@ -31,14 +30,17 @@ const Menu = () => {
         </a>
 
         <div className="overlay-content">
-          <Link to="/profile" aria-label="profile">
-            Profile
-          </Link>
           <Link to="/" aria-label="dashboard">
             Dashboard
           </Link>
+          <Link to="/goals" aria-label="goals">
+            Goals
+          </Link>
           <Link to="/customise" aria-label="customise">
             Customise
+          </Link>
+          <Link to="/profile" aria-label="profile">
+            Profile
           </Link>
           <Link to="/settings" aria-label="settings">
             Settings

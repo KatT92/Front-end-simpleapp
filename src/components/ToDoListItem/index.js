@@ -18,7 +18,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
 
   async function fetchPutTodos(bool) {
     let response = await fetch(
-      `${process.env.BACK_END_URL}/users/${user_id}/todo/${todo_id}`,
+      `https://simple-app-nd.herokuapp.com/users/${user_id}/todo/${todo_id}`,
       {
         method: "PUT",
         headers: {
@@ -64,7 +64,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
 
     async function fetchGetGoals() {
       let response = await fetch(
-        `${process.env.BACK_END_URL}/users/${user_id}/goals`
+        `https://simple-app-nd.herokuapp.com/users/${user_id}/goals`
       );
       let data = await response.json();
       console.log("get data", data);
@@ -83,7 +83,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
 
           async function fetchPutGoal() {
             let response = await fetch(
-              `${process.env.BACK_END_URL}/users/${user_id}/goals/${goal.goals_id}`,
+              `https://simple-app-nd.herokuapp.com/users/${user_id}/goals/${goal.goals_id}`,
               {
                 method: "PUT",
                 headers: {
@@ -111,7 +111,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
         ) {
           async function fetchPutGoal() {
             let response = await fetch(
-              `${process.env.BACK_END_URL}/users/${user_id}/goals/${goal.goals_id}`,
+              `https://simple-app-nd.herokuapp.com/users/${user_id}/goals/${goal.goals_id}`,
               {
                 method: "PUT",
                 headers: {
@@ -130,7 +130,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
               }
             );
             let data = await response.json();
-            console.log("put goals", data.payload);
+            console.log("put goals", data);
           }
           fetchPutGoal();
         }
@@ -144,6 +144,7 @@ const ToDoListItem = ({ item, items, setItems, todo_id }) => {
     setTimeout(() => remove(e), 1000);
   }
 
+  // change to patch
   schedule.scheduleJob("0 0 * * *", function () {
     fetchPutTodos(false);
     console.log("job");

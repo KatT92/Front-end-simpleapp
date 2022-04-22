@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react";
 import Reminders from "../Reminders";
 import ToDoList from "../ToDoList";
+import Goals from "../Goals";
 import Header from "../Header";
+import ReminderList2 from "../ReminderList2";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const Dashboard = () => {
+const Dashboard = ({ showReminder, showToDo, showGoals }) => {
   const { user } = useAuth0();
   const [user_id, setUser_id] = useState(Number(user.sub.substring(14, 18)));
   const [full_name, setFullName] = useState("");
+  console.log(user_id);
 
   useEffect(() => {
     setUser_id(Number(user.sub.substring(14, 18)));
     setFullName(user.name);
     async function fetchPostUsers() {
-      let response = await fetch(`${process.env.BACK_END_URL}/users`, {
+      let response = await fetch(`https://simple-app-nd.herokuapp.com/users`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -28,7 +31,7 @@ const Dashboard = () => {
 
     async function fetchGetUsers() {
       let response = await fetch(
-        `${process.env.BACK_END_URL}/users/${user_id}`
+        `https://simple-app-nd.herokuapp.com/users/${user_id}`
       );
       let data = await response.json();
       console.log("get data", data);
@@ -39,8 +42,9 @@ const Dashboard = () => {
   return (
     <div className="Dashboard">
       <Header bool={"dashboard"} />
-      <Reminders />
-      <ToDoList />
+      {showReminder ? <ReminderList2 /> : <></>}
+      {showToDo ? <ToDoList /> : <></>}
+      {showGoals ? <Goals /> : <></>}
     </div>
   );
 };

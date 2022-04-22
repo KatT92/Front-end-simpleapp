@@ -12,14 +12,14 @@
 .Goals {
   background-color: var(--blue);
   height: auto;
-  width: 80vw;
+  width: 90%;
   align-self: center;
   justify-self: center;
   border-radius: 2em;
   margin: auto;
   margin-bottom: 2em;
   display: grid;
-
+  margin-top: 1em;
   row-gap: 10px;
   padding-bottom: 5%;
 }

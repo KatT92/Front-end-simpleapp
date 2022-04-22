@@ -30,7 +30,7 @@ const ToDoList = () => {
   useEffect(() => {
     async function getTodo() {
       let response = await fetch(
-        `${process.env.BACK_END_URL}/users/${user_id}/todo`
+        `https://simple-app-nd.herokuapp.com/users/${user_id}/todo`
       );
       let data = await response.json();
       if (data.success) {

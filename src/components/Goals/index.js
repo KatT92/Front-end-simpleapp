@@ -1,6 +1,5 @@
 import PieChart from "../PieChart";
 import "./Goals.css";
-
 import { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import AddTodoListButton from "../AddTodoListButton";
@@ -13,7 +12,7 @@ const Goals = () => {
   useEffect(() => {
     async function fetchGetGoals() {
       let response = await fetch(
-        `${process.env.BACK_END_URL}/users/${user_id}/goals`
+        `https://simple-app-nd.herokuapp.com/users/${user_id}/goals`
       );
       let data = await response.json();
       console.log("get data", data);

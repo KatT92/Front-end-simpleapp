@@ -8,6 +8,7 @@ const ReminderData = ({ reminderData, setReminderData }) => {
         return (
           <ReminderItem
             key={item.reminder_id}
+            reminder_id={item.reminder_id}
             item={item}
             name={item.text}
             time={item.time}

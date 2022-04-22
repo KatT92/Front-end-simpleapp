@@ -45,7 +45,7 @@ function AddItemForm() {
   async function fetchPostRem() {
     let reminder_id = Math.floor(1000 + Math.random() * 9000);
     let response = await fetch(
-      `${process.env.BACK_END_URL}/users/${user_id}/reminders`,
+      `https://simple-app-nd.herokuapp.com/users/${user_id}/reminders`,
       {
         method: "POST",
         headers: {
@@ -87,7 +87,7 @@ function AddItemForm() {
   async function fetchPostTodos() {
     let todo_id = Math.floor(1000 + Math.random() * 9000);
     let response = await fetch(
-      `${process.env.BACK_END_URL}/users/${user_id}/todo`,
+      `https://simple-app-nd.herokuapp.com/users/${user_id}/todo`,
       {
         method: "POST",
         headers: {
@@ -115,7 +115,7 @@ function AddItemForm() {
     console.log("post dp", data);
   }
 
-  if (page === "Reminders") {
+  if (page === "Reminders2") {
     return (
       <div>
         <Header bool={"form"} />

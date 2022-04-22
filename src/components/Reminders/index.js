@@ -13,7 +13,7 @@ const Reminders = () => {
   useEffect(() => {
     async function fetchReminders() {
       const response = await fetch(
-        `${process.env.BACK_END_URL}/users/${user_id}/reminders`
+        `https://simple-app-nd.herokuapp.com/users/${user_id}/reminders`
       );
       const data = await response.json();
       //console.log(response.payload);
@@ -21,7 +21,7 @@ const Reminders = () => {
     }
     async function setRem() {
       let newArray = await fetchReminders();
-      console.log(newArray);
+      console.log("na", newArray);
 
       let filteredcomplete = newArray.filter((item) => {
         return item.iscompleted === false;
