@@ -14,7 +14,7 @@
 
 
 
-## Summary
+##  Summary
 Wellness and productivity apps are the key tools in most people's lives; however, most apps in the market are often overwhelming for many people who are neuro-divergent.
 
 -
