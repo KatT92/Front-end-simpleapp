@@ -1,4 +1,5 @@
 <h1 align = "center"> ☮️ SIMPLE ☮️</h1>
+<h2 align = "center"> Please note that this site is curently down due to changes in the netlify licensing.
 
 **Table of Contents**
 1. [Summary](#{Summary}) 
