@@ -20,6 +20,13 @@ Wellness and productivity apps are the key tools in most people's lives; however
   
   
   
+  
+  
+  
+  
+  
+  
+  
 ## Architecture
 <img align="center" alt="DataModel" width="700px" src="./public/architecture.png" style="padding-right:50px;" /> 
   
