@@ -9,7 +9,7 @@
 
 ## Demo
 
-<img align="left" alt="App" width="100px" src="./public/firstpart.gif" style="padding-right:10px;" />  
+<img align="left" alt="App" width="100px" src="./public/firstpart.gif" style="padding-right:50px;" />  
 <img align="left" alt="App-demo" width="100px" src="./public/secondpart.gif" style="padding-right:50px;" />  
 
 
